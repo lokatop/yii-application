@@ -13,7 +13,9 @@ class TitleDescForm extends Model
         return [
             // name, email, subject and body are required
             ['title', 'required'],
+            ['title', 'string', 'min'=>3],
             ['desc', 'required'],
+            ['desc', 'string', 'min'=>10]
         ];
     }
 
