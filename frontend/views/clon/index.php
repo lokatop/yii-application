@@ -14,17 +14,19 @@ use yii\helpers\Html; ?>
 
     <div class="row justify-content-center">
 
-        <?php $form = ActiveForm::begin(['method'=>'get','action'=>[''],'id' => 'title-desc-form']); ?>
+        <div class="col-lg-5">
+            <?php $form = ActiveForm::begin(['method'=>'get','action'=>[''],'id' => 'title-desc-form']); ?>
 
-        <?= $form->field($model, 'title')->hint('Enter title') ?>
+            <?= $form->field($model, 'title')->hint('Enter title') ?>
 
-        <?= $form->field($model, 'desc')->hint('Enter Desc of title') ?>
+            <?= $form->field($model, 'desc')->hint('Enter Desc of title') ?>
 
-        <div class="form-group">
-            <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'title-desc-button']) ?>
+            <div class="form-group">
+                <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'title-desc-button']) ?>
+            </div>
+
+            <?php ActiveForm::end(); ?>
         </div>
-
-        <?php ActiveForm::end(); ?>
     </div>
 
     <div class="row justify-content-center">
