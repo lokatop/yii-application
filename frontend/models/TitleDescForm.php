@@ -12,7 +12,16 @@ class TitleDescForm extends Model
     {
         return [
             // name, email, subject and body are required
-            [['title', 'desc'], 'required'],
+            ['title', 'required'],
+            ['desc', 'required'],
         ];
     }
+
+    public function getTitle(){
+        return $this->title;
+    }
+    public function getDesc(){
+        return $this->desc;
+    }
+
 }

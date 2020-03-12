@@ -6,6 +6,7 @@ namespace frontend\controllers;
 
 use frontend\models\TitleDescForm;
 use Yii;
+use yii\helpers\VarDumper;
 use yii\web\Controller;
 
 class ClonController extends Controller
@@ -19,15 +20,21 @@ class ClonController extends Controller
     {
         $model = new TitleDescForm();
         if($model->load(Yii::$app->request->get())&& $model->validate()){
-            $title = $model->title;
-            $desc = $model->title;
+            //VarDumper::dump($model);
+            $title = $model->getTitle();
+            $desc = $model->getDesc();
             return $this->render('index', ['model'=>$model,
                                     'title'=>$title,
                                     'desc'=>$desc]);
         }else {
+
+            $title = $model->getTitle();
+            $desc = $model->getDesc();
             $model->title = '';
             $model->desc = '';
-            return $this->render('index', ['model'=>$model]);
+            return $this->render('index', ['model'=>$model,
+                'title'=>$title,
+                'desc'=>$desc]);
         }
     }
 }

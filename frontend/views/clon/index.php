@@ -14,7 +14,7 @@ use yii\helpers\Html; ?>
 
     <div class="row justify-content-center">
 
-        <?php $form = ActiveForm::begin(['id' => 'title-desc-form']); ?>
+        <?php $form = ActiveForm::begin(['method'=>'get','action'=>[''],'id' => 'title-desc-form']); ?>
 
         <?= $form->field($model, 'title')->hint('Enter title') ?>
 
